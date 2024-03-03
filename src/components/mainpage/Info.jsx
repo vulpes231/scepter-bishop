@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Info = () => {
   return (
-    <section className="bg-black flex flex-col gap-12 p-6 uppercase items-center text-center">
+    <section className="bg-black flex flex-col gap-12 p-6 uppercase items-center text-center lg:min-w-[1450px]">
       <h2 className="text-3xl font-semibold  mt-28 ">
         like what you see? <br /> discover our wines
       </h2>

@@ -12,7 +12,7 @@ import {
 
 const MainPage = () => {
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-slate-900 text-white flex flex-col lg:flex-row lg:overflow-scroll">
       <Header />
       <Hero />
       <Shop />

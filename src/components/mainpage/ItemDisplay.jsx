@@ -4,7 +4,7 @@ import { chardonnay, redwine, rose } from "../../assets";
 
 const ItemDisplay = () => {
   return (
-    <section className="bg-black p-6 flex flex-col gap-12  ">
+    <section className="bg-black p-6 flex flex-col gap-12 lg:min-w-[1200px] ">
       <div className="flex overflow-x-scroll gap-8 pl-20 custom-scrollbar">
         <Item
           wineImg={redwine}

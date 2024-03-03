@@ -9,3 +9,30 @@
 .custom-scrollbar {
   scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
+.lady {
+  background-image: url("./assets/pic.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 400px; /* Set a default height */
+}
+
+.background-container {
+  background-image: url("./assets/pic2.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 400px; /* Set a default height */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .background-container {
+    background-image: url("./assets/large2.jpg");
+    background-size: cover;
+    height: 100%; /* Set the height to fill the screen */
+  }
+  .lady {
+    background-image: url("./assets/pic.jpg");
+    background-size: cover;
+    height: 100%; /* Set the height to fill the screen */
+  }
+}
