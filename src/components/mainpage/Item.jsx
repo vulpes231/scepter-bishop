@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Item = ({ wineImg, wineName, winePrice }) => {
+const Item = ({ wineImg, wineName, winePrice, customClass }) => {
   return (
-    <div className="text-white uppercase flex flex-col gap-8 w-full items-center ">
+    <div
+      className={`text-white uppercase flex flex-col gap-4 w-full items-center`}
+    >
       <figure>
-        <img src={wineImg} alt="" className="w-[50px]" />
+        <img src={wineImg} alt="" className={`w-[90px]  ${customClass}`} />
       </figure>
       <h3 className="text-2xl font-semibold whitespace-nowrap">{wineName}</h3>
       <p>{winePrice}</p>

@@ -1,5 +1,14 @@
 import React from "react";
-import { Header, Hero, ItemDisplay, Shop } from "../components";
+import {
+  Back1,
+  Back2,
+  Craft,
+  Header,
+  Hero,
+  Info,
+  ItemDisplay,
+  Shop,
+} from "../components";
 
 const MainPage = () => {
   return (
@@ -7,7 +16,11 @@ const MainPage = () => {
       <Header />
       <Hero />
       <Shop />
+      <Back1 />
       <ItemDisplay />
+      <Craft />
+      <Back2 />
+      <Info />
     </div>
   );
 };

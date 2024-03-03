@@ -8,7 +8,9 @@ const Hero = () => {
         <h3 className="text-5xl text-center font-black">
           uncork your inner queen
         </h3>
-        <Link className="p-4 border font-thin">shop wines</Link>
+        <Link className="py-3 px-8 mx-auto rounded-md border-2">
+          shop wines
+        </Link>
       </div>
       <p className="text-center font-thin text-sm">
         majestic wines made from noble vines crafted in columbia valley, wa
