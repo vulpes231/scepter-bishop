@@ -19,7 +19,7 @@ const MobileMenu = ({ toggle }) => {
     <div
       className={
         toggle
-          ? "absolute h-screen w-full top-[77px] left-0 flex flex-col bg-white bg-opacity-40 items-center justify-center gap-12"
+          ? "absolute h-screen w-full top-[77px] left-0 flex flex-col bg-slate-900 bg-opacity-90 items-center justify-center gap-12"
           : "hidden"
       }
     >
