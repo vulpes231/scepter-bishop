@@ -9,6 +9,7 @@
 .custom-scrollbar {
   scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
+
 .lady {
   background-image: url("./assets/pic.jpg");
   background-size: 100%;

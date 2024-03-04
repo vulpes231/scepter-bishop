@@ -7,7 +7,11 @@ const Item = ({ wineImg, wineName, winePrice, customClass }) => {
       className={`text-white uppercase flex flex-col gap-4 w-full items-center`}
     >
       <figure>
-        <img src={wineImg} alt="" className={`w-[90px]  ${customClass}`} />
+        <img
+          src={wineImg}
+          alt=""
+          className={`w-[90px] lg:w-[150px]  ${customClass}`}
+        />
       </figure>
       <h3 className="text-2xl font-semibold whitespace-nowrap">{wineName}</h3>
       <p>{winePrice}</p>
