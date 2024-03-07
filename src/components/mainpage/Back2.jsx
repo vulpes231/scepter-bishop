@@ -1,11 +1,20 @@
 import React from "react";
-import { bg2, large2 } from "../../assets";
+import { herovid } from "../../assets";
 
 const Back2 = () => {
   return (
-    <div className="bg-cover bg-center lg:h-screen lg:min-w-[1400px] background-container">
-      {/* Your content here */}
-    </div>
+    <section className="h-auto lg:h-screen lg:min-w-[1200px]">
+      <video
+        autoplay
+        muted
+        loop
+        controls
+        className="w-full h-full object-cover "
+      >
+        <source src={herovid} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
   );
 };
 

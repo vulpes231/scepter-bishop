@@ -58,11 +58,12 @@ const MainPage = () => {
       <Shop />
       <Back1 />
       <ItemDisplay />
-      {/* <Craft /> */}
       <Back2 />
       <Info />
       <span className="hidden lg:flex gap-3 items-center absolute top-0 right-0 uppercase p-6">
-        <Link>sign in</Link>
+        <Link className="capitalize text-lg font-extralight font-dancing-script">
+          check out anonymously
+        </Link>
         <p>|</p>
         <span className="flex items-center">
           <BsCart3 />

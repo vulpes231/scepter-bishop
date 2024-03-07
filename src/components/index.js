@@ -10,6 +10,7 @@ import Info from "./mainpage/Info";
 import Back1 from "./mainpage/Back1";
 import Back2 from "./mainpage/Back2";
 import Article from "./mainpage/Article";
+import Quote from "./mainpage/Quote";
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   Back2,
   Back1,
   Article,
+  Quote,
 };

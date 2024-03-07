@@ -64,3 +64,26 @@ export const blogArticles = [
     link: "https://www.psilocybinsf.com/blog/5-must-watch-documentaries-in-psychedelics",
   },
 ];
+
+export const myQuotes = [
+  {
+    id: 1,
+    quote: `Psychedelics show you what’s in and on your mind, those subconscious thoughts and feelings that are hidden, covered up, forgotten, out of sight, maybe even completely unexpected, but nevertheless imminently present.`,
+    author: "Rick Strassman",
+  },
+  {
+    id: 2,
+    quote: `Taking LSD was a profound experience, one of the most important things in my life. LSD shows you that there’s another side to the coin, and you can’t remember it when it wears off, but you know it. It reinforced my sense of what was important, creating great things instead of making money, putting things back into the stream of history and of human consciousness as much as I could.`,
+    author: "Steve Jobs",
+  },
+  {
+    id: 3,
+    quote: `Psychedelics are catalysts for a deeper understanding of the mind and consciousness.`,
+    author: "Stanislav Grof",
+  },
+  {
+    id: 4,
+    quote: `If life wasn't real, it would be the craziest psychedelic trip ever.`,
+    author: "Joe Rogan",
+  },
+];
