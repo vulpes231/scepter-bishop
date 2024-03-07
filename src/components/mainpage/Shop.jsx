@@ -6,18 +6,18 @@ const Shop = () => {
     <section className="p-6 flex flex-col gap-12 uppercase w-full bg-black lg:min-w-[1000px] lg:items-center lg:justify-center">
       <div className="flex flex-col mt-20 items-center gap-12 lg:w-[500px] lg:mx-auto">
         <h3 className="text-3xl lg:text-5xl text-center font-extralight ">
-          issue and edict. bestow an honor. grant an audience
+          For meditations,Raves,Outdoors parties,Creative bursts and more.
         </h3>
         <p className="text-center text-sm">
-          scepter &amp; sword wine co. celebrates the remarkable women who ruled
-          the lands and led their people. the words i, the queen, sealed her
-          orders while the scepter symbolized her absolute power. now the
-          scepter is in your hands.
+          Psychedelics show you what’s in and on your mind, those subconscious
+          thoughts and feelings that are hidden, covered up, forgotten, out of
+          sight, maybe even completely unexpected, but nevertheless imminently
+          present.
         </p>
       </div>
 
       <Link className="py-3 px-8 lg:px-9 lg:py-4 border-2 mx-auto mb-20 rounded-md text-sm">
-        shop our wines
+        view stock
       </Link>
     </section>
   );

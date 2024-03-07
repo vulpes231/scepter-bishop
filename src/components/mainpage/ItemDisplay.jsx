@@ -8,15 +8,15 @@ const ItemDisplay = () => {
       <div className="flex overflow-x-scroll gap-8 pl-20 custom-scrollbar lg:overscroll-x-none lg:gap-20">
         <Item
           wineImg={redwine}
-          wineName={"red wine blend"}
-          winePrice={"$24.99"}
+          wineName={"mushroom"}
+          winePrice={"15,000 per gram"}
           customClass={"transform rotate-180"}
         />
-        <Item wineImg={rose} wineName={"rosé"} winePrice={"$19.99"} />
+        <Item wineImg={rose} wineName={"lsd"} winePrice={"15,000 per tab"} />
         <Item
           wineImg={chardonnay}
-          wineName={"chardonnay"}
-          winePrice={"$21.99"}
+          wineName={"aderall"}
+          winePrice={"25,000"}
           customClass={"transform rotate-180"}
         />
       </div>

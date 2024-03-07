@@ -4,6 +4,7 @@ import { HiCube, HiMenu } from "react-icons/hi";
 import { BsCart2, BsInstagram, BsTelegram, BsWhatsapp } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
 import MobileMenu from "./mainpage/MobileMenu";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -30,9 +31,21 @@ const Header = () => {
           (0)
         </span>
         <span className="lg:flex lg:flex-col gap-4 items-center hidden ">
-          <BsTelegram />
-          <BsWhatsapp />
-          <BsInstagram />
+          <Link
+            to={
+              "https://www.instagram.com/psychedelicsng?igsh=MXF3bGdrb2RjYnE1Mw=="
+            }
+            target="_blank"
+          >
+            <BsInstagram />
+          </Link>
+
+          <Link to={""} target="_blank">
+            <BsWhatsapp />
+          </Link>
+          <Link to={"https://t.me/psychedelicthrills"} target="_blank">
+            <BsTelegram />
+          </Link>
         </span>
         {/* mobile menu */}
         <MobileMenu toggle={toggle} />
