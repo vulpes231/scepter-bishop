@@ -91,20 +91,20 @@ export const shopItems = [
     name: "mushroom",
     desc: "",
     img: redwine,
-    price: `${nairaSymbol} 15,000 per gram`,
+    price: `${nairaSymbol} 15000`,
   },
   {
     id: 2,
     name: "aderall",
     desc: "",
     img: rose,
-    price: `${nairaSymbol} 25,000 per gram`,
+    price: `${nairaSymbol} 25000`,
   },
   {
     id: 3,
     name: "lsd",
     desc: "",
     img: chardonnay,
-    price: `${nairaSymbol} 15,000 per tab`,
+    price: `${nairaSymbol} 15000`,
   },
 ];

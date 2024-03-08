@@ -17,8 +17,11 @@ const Header = () => {
     setToggle(false);
   }
 
+  const cartItems = localStorage.getItem("cart");
+  console.log(cartItems);
+
   return (
-    <header className="p-6 border-b border-white fixed top-0 w-full z-50 lg:w-[60px] lg:h-screen lg:border-r-2 lg:z-50 text-white">
+    <header className="p-6 border-b border-white fixed top-0 w-full z-40 lg:w-[60px] lg:h-screen lg:border-r-2 lg:z-50 text-white">
       <nav className="flex justify-between items-center lg:flex-col lg:h-full ">
         <Link to={"/"}>
           <HiCube className="text-3xl" />

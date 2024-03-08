@@ -12,6 +12,8 @@ import Back2 from "./mainpage/Back2";
 import Article from "./mainpage/Article";
 import Quote from "./mainpage/Quote";
 import List from "./shop/List";
+import Detail from "./itemdetails/Detail";
+import SideBar from "./itemdetails/SideBar";
 
 export {
   Header,
@@ -28,4 +30,6 @@ export {
   Article,
   Quote,
   List,
+  Detail,
+  SideBar,
 };

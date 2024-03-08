@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 
-import {
-  FaArrowCircleLeft,
-  FaArrowCircleRight,
-  FaArrowLeft,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import { shopItems } from "../../constants";
 import Button from "../Button";
+import { Link } from "react-router-dom";
 
 const List = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,6 +33,7 @@ const List = () => {
       setCurrentItem(shopItems[newIndex]);
     }
   }
+
   return (
     <div className=" w-full flex flex-col items-center p-6 lg:max-w-[900px] lg:mx-auto justify-center h-screen uppercase gap-6 ">
       <div className="flex items-center justify-between w-full gap-3">
@@ -59,12 +56,14 @@ const List = () => {
           {currentItem?.name}
         </p>
         <p className="font-extralight text-sm">{currentItem?.price}</p>
-        <Button
-          title={"buy"}
-          customClass={
-            "border border-2 py-4 mx-auto rounded-md lg:absolute lg:-bottom-20 lg:right-0 w-[250px] uppercase"
+        <Link
+          className={
+            " border-2 py-4 mx-auto rounded-md lg:absolute lg:-bottom-20 lg:right-0 w-[250px] uppercase"
           }
-        />
+          to={`/item/${currentItem.name}`}
+        >
+          buy
+        </Link>
       </div>
     </div>
   );
