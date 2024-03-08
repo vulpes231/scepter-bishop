@@ -1,3 +1,6 @@
+import { redwine, rose, chardonnay } from "../assets";
+import { nairaSymbol } from "../utils";
+
 export const mobileMenuLinks = [
   {
     id: 1,
@@ -79,5 +82,29 @@ export const myQuotes = [
     id: 4,
     quote: `If life wasn't real, it would be the craziest psychedelic trip ever.`,
     author: "Joe Rogan",
+  },
+];
+
+export const shopItems = [
+  {
+    id: 1,
+    name: "mushroom",
+    desc: "",
+    img: redwine,
+    price: `${nairaSymbol} 15,000 per gram`,
+  },
+  {
+    id: 2,
+    name: "aderall",
+    desc: "",
+    img: rose,
+    price: `${nairaSymbol} 25,000 per gram`,
+  },
+  {
+    id: 3,
+    name: "lsd",
+    desc: "",
+    img: chardonnay,
+    price: `${nairaSymbol} 15,000 per tab`,
   },
 ];

@@ -43,8 +43,8 @@ const MainPage = () => {
       <Back2 />
       <Info />
       <span className="hidden lg:flex gap-3 items-center absolute top-0 right-0 uppercase p-6">
-        <Link className="capitalize text-lg font-extralight font-dancing-script">
-          check out anonymously
+        <Link className="capitalize text-lg font-extralight">
+          checkout anonymously
         </Link>
         <p>|</p>
         <span className="flex items-center">

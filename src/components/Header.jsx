@@ -30,7 +30,7 @@ const Header = () => {
             <MdCancel className="text-2xl font-light" />
           )}
         </span>
-        <span className="flex items-center md:hidden ">
+        <span className="flex items-center lg:hidden ">
           <BsCart2 className="text-2xl font-light" />
           (0)
         </span>

@@ -16,3 +16,5 @@ export const scrollHandler = (event) => {
 export const isMobile = () => {
   return window.innerWidth <= 768; // Example breakpoint for mobile devices
 };
+
+export const nairaSymbol = "₦";
