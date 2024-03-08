@@ -36,7 +36,7 @@ const Shop = () => {
         </motion.div>
       </div>
 
-      <CustomLink title={"view stock"} />
+      <CustomLink title={"view stock"} path={"/shop"} />
     </section>
   );
 };

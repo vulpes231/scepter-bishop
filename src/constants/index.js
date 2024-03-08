@@ -1,26 +1,20 @@
 export const mobileMenuLinks = [
   {
     id: 1,
-    title: "majestic wines",
+    title: "view stock",
     number: "01",
-    path: "",
+    path: "/shop",
   },
   {
     id: 2,
-    title: "royal merch",
+    title: "know your psychedelic",
     number: "02",
     path: "",
   },
   {
     id: 3,
-    title: "about us",
-    number: "03",
-    path: "",
-  },
-  {
-    id: 4,
     title: "contact us",
-    number: "04",
+    number: "03",
     path: "",
   },
 ];

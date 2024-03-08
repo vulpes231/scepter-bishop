@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Back1,
   Back2,
@@ -11,29 +11,11 @@ import {
 } from "../components";
 import { BsCart3 } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { scrollHandler, isMobile } from "../utils";
 
 const MainPage = () => {
-  const isMobile = () => {
-    return window.innerWidth <= 768; // Example breakpoint for mobile devices
-  };
-
-  const scrollHandler = (event) => {
-    event.preventDefault();
-    const delta = event.deltaY || event.detail || event.wheelDelta;
-    const container = document.querySelector(".bonita");
-
-    // Determine the direction of scroll
-    if (delta > 0) {
-      // Scrolling down
-      container.scrollLeft += 15; // Decreased scroll speed
-    } else {
-      // Scrolling up
-      container.scrollLeft -= 15; // Decreased scroll speed
-    }
-  };
-
   // Prevent default vertical scrolling behavior for desktop
-  React.useEffect(() => {
+  useEffect(() => {
     const container = document.querySelector(".bonita");
     if (!isMobile()) {
       const preventDefault = (event) => {

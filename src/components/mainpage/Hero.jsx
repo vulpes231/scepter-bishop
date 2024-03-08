@@ -13,7 +13,7 @@ const Hero = () => {
         </h3>
 
         <span className="flex flex-col gap-6 lg:flex-row lg:pb-10 lg:items-start lg:gap-[300px]">
-          <CustomLink title={"view stock"} />
+          <CustomLink title={"view stock"} path={"/shop"} />
 
           <p className="text-center font-thin text-sm mt-40 lg:mt-0">
             We deliver nationwide.

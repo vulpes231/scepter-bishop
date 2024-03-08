@@ -5,7 +5,7 @@ const Back2 = () => {
   return (
     <section className="h-auto lg:h-screen lg:min-w-[1200px]">
       <video
-        autoplay
+        autoPlay
         muted
         loop
         controls

@@ -13,12 +13,16 @@ const Header = () => {
     setToggle((prev) => !prev);
   };
 
+  function closeMenu() {
+    setToggle(false);
+  }
+
   return (
-    <header className="p-6 border-b border-white fixed top-0 w-full z-50 lg:w-[60px] lg:h-screen lg:border-r-2 lg:z-50">
+    <header className="p-6 border-b border-white fixed top-0 w-full z-50 lg:w-[60px] lg:h-screen lg:border-r-2 lg:z-50 text-white">
       <nav className="flex justify-between items-center lg:flex-col lg:h-full ">
-        <span>
+        <Link to={"/"}>
           <HiCube className="text-3xl" />
-        </span>
+        </Link>
         <span onClick={handleToggle} className="cursor-pointer">
           {!toggle ? (
             <HiMenu className="text-2xl font-light" />
@@ -48,7 +52,7 @@ const Header = () => {
           </Link>
         </span>
         {/* mobile menu */}
-        <MobileMenu toggle={toggle} />
+        <MobileMenu toggle={toggle} closeMenu={closeMenu} />
       </nav>
     </header>
   );
