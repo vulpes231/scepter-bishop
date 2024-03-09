@@ -5,7 +5,6 @@ import { CartIcon, Header, SideBar } from "./components";
 
 const App = () => {
   const [showCartModal, setshowCartModal] = useState(false);
-  const cartItems = JSON.parse(localStorage.getItem("cartItem"));
 
   function closeCartModal() {
     console.log("clicked");
@@ -30,7 +29,7 @@ const App = () => {
           checkout anonymously
         </Link>
         <p>|</p>
-        <CartIcon cartItems={cartItems} handleClick={openCartModal} />
+        <CartIcon handleClick={openCartModal} />
       </span>
       {showCartModal && <SideBar closeModal={closeCartModal} />}
     </>

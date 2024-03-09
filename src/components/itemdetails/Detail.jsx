@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { shopItems } from "../../constants";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import SideBar from "./SideBar";
+import { useDispatch, useSelector } from "react-redux";
 
 const initialState = {
   quantity: 1,
 };
 
 const Detail = ({ itemName }) => {
+  const cart = JSON.parse(localStorage.getItem("cartItem")) || [];
+  const [myCart, setMyCart] = useState(cart);
   const [qty, setQty] = useState(initialState);
   const [showCartModal, setShowCartModal] = useState(false);
 
@@ -22,8 +25,6 @@ const Detail = ({ itemName }) => {
   }
 
   const totalCost = parseInt(item.price.slice(2)) * parseInt(qty.quantity);
-
-  let cart = JSON.parse(localStorage.getItem("cartItem")) || [];
 
   function addToCart(e) {
     e.preventDefault();
@@ -47,8 +48,9 @@ const Detail = ({ itemName }) => {
     }
 
     if (!isDuplicate) {
-      cart.push(formData);
-      localStorage.setItem("cartItem", JSON.stringify(cart));
+      const updatedCart = [...cart, formData];
+      localStorage.setItem("cartItem", JSON.stringify(updatedCart));
+      setMyCart(updatedCart);
       setShowCartModal(true);
     }
   }
@@ -58,9 +60,19 @@ const Detail = ({ itemName }) => {
     setShowCartModal(false);
   }
 
+  function increaseQty() {
+    setQty((prevQty) => ({ ...prevQty, quantity: prevQty.quantity + 1 }));
+  }
+
+  function decreaseQty() {
+    if (qty.quantity > 1) {
+      setQty((prevQty) => ({ ...prevQty, quantity: prevQty.quantity - 1 }));
+    }
+  }
+
   return (
     <div className="p-6 flex flex-col w-full items-center justify-center h-screen gap-6 uppercase lg:flex-row lg:gap-16">
-      <figure className="rounded-lg bg-slate-300 p-1 lg:ml-20 w-full">
+      <figure className="rounded-lg bg-slate-300 p-1 lg:ml-20 lg:w-full">
         <img
           src={item?.img}
           alt="item-image"
@@ -81,9 +93,17 @@ const Detail = ({ itemName }) => {
               onChange={handleInputChange}
               value={qty.quantity}
               name="quantity"
+              inputMode="numeric"
+              pattern="[0-9]*"
             />
-            <FaPlus className="absolute top-4 right-2 cursor-pointer" />
-            <FaMinus className="absolute top-4 left-2 cursor-pointer" />
+            <FaPlus
+              className="absolute top-4 right-2 cursor-pointer"
+              onClick={increaseQty}
+            />
+            <FaMinus
+              className="absolute top-4 left-2 cursor-pointer"
+              onClick={decreaseQty}
+            />
           </span>
           <button
             onClick={addToCart}

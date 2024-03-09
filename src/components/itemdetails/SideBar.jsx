@@ -7,13 +7,51 @@ import { nairaSymbol } from "../../utils";
 const initialState = {
   quantity: 1,
 };
-const cartItems = JSON.parse(localStorage.getItem("cartItem"));
 
 const SideBar = ({ closeModal }) => {
+  const cartItems = JSON.parse(localStorage.getItem("cartItem"));
   const [qty, setQty] = useState(initialState);
   const [cartContent, setCartContent] = useState(cartItems);
 
+  // console.log(cartContent);
+
+  let total = 0;
+
+  if (cartContent) {
+    for (let i = 0; i < cartContent.length; i++) {
+      total += cartContent[i].total;
+    }
+  }
+
+  // console.log(cartContent);
+
   const myItems = cartContent?.map((item, index) => {
+    const increaseQty = () => {
+      const updatedCartContent = [...cartContent];
+      updatedCartContent[index].amount.quantity += 1;
+      updatedCartContent[index].total =
+        parseInt(updatedCartContent[index].price.slice(2)) *
+        parseInt(updatedCartContent[index].amount.quantity);
+      setCartContent(updatedCartContent);
+      updateCartInLocalStorage(updatedCartContent);
+    };
+
+    const decreaseQty = () => {
+      const updatedCartContent = [...cartContent];
+      if (updatedCartContent[index].amount.quantity > 1) {
+        updatedCartContent[index].amount.quantity -= 1;
+        updatedCartContent[index].total =
+          parseInt(updatedCartContent[index].price.slice(2)) *
+          parseInt(updatedCartContent[index].amount.quantity);
+        setCartContent(updatedCartContent);
+        updateCartInLocalStorage(updatedCartContent);
+        console.log(updatedCartContent);
+      }
+    };
+
+    const updateCartInLocalStorage = (updatedCartContent) => {
+      localStorage.setItem("cartItem", JSON.stringify(updatedCartContent));
+    };
     return (
       <div
         key={index}
@@ -23,24 +61,32 @@ const SideBar = ({ closeModal }) => {
           <p>{item.name}</p>
           <p>{item.price}</p>
         </span>
-        <span className="w-full relative flex justify-between items-center">
-          <input
-            type="number"
-            className="w-full border bg-transparent text-center placeholder:font-bold py-2 outline-none"
-            placeholder={item.quantity}
-            onChange={handleInputChange}
-            value={item.quantity}
-            name="quantity"
-          />
-          <FaPlus className="absolute top-4 right-[52%] cursor-pointer text-sm" />
-          <FaMinus className="absolute top-4 left-2 cursor-pointer text-sm" />
+        <div className="flex items-center">
+          <span className="relative flex justify-between items-center">
+            <input
+              type="number"
+              className="border bg-transparent text-center placeholder:font-bold py-2 outline-none"
+              placeholder={`Qty: ${item.amount.quantity}`}
+              onChange={handleInputChange}
+              value={item.amount.quantity}
+              name="quantity"
+            />
+            <FaPlus
+              className="absolute top-4 right-2 cursor-pointer"
+              onClick={increaseQty}
+            />
+            <FaMinus
+              className="absolute top-4 left-2 cursor-pointer"
+              onClick={decreaseQty}
+            />
+          </span>
           <p
             className="w-full text-end uppercase underline text-sm cursor-pointer"
             onClick={() => deleteItemFromCart(item.name)}
           >
             delete
           </p>
-        </span>
+        </div>
       </div>
     );
   });
@@ -79,11 +125,11 @@ const SideBar = ({ closeModal }) => {
       <div className="flex flex-col gap-4 uppercase">
         <span className="flex justify-between font-extralight text-xs ">
           <p>delivery</p>
-          <p>{`${nairaSymbol}1000`}</p>
+          <p>{`${nairaSymbol}1500`}</p>
         </span>
         <span className="flex justify-between font-black">
           <p>total</p>
-          <p>{`${nairaSymbol}1000`}</p>
+          <p>{`${nairaSymbol}${total}`}</p>
         </span>
 
         <span className="flex flex-col gap-4">
