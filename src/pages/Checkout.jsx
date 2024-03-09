@@ -22,7 +22,10 @@ const Checkout = () => {
       className="min-h-screen bg-slate-900 text-white flex flex-col lg:flex-row lg:overflow-scroll bonita"
       onWheel={isMobile() ? null : scrollHandler}
     >
-      <Header />
+      {/* <Header /> */}
+      <div>
+        <h3 className="mt-32">This page is under construction...</h3>
+      </div>
     </div>
   );
 };

@@ -21,11 +21,14 @@ const ItemDetails = () => {
   }, []);
   return (
     <div
-      className="min-h-screen bg-slate-900 text-white flex flex-col lg:flex-row lg:overflow-scroll bonita w-full"
+      className="min-h-screen bg-slate-900 text-white lg:overflow-scroll bonita w-full"
       onWheel={isMobile() ? null : scrollHandler}
     >
-      <Header />
-      <Detail itemName={itemName} />
+      {/* <Header /> */}
+      <div className="lg:max-w-[950px] lg:mx-auto ">
+        {/* <h3>Shop Products</h3> */}
+        <Detail itemName={itemName} />
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { shopItems } from "../../constants";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import SideBar from "./SideBar";
@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const Detail = ({ itemName }) => {
-  let cart = [];
   const [qty, setQty] = useState(initialState);
   const [showCartModal, setShowCartModal] = useState(false);
 
@@ -22,8 +21,9 @@ const Detail = ({ itemName }) => {
     }));
   }
 
-  const itemPrice = item.price.slice(2, item.price.length);
-  const totalCost = parseInt(itemPrice) * parseInt(qty.quantity);
+  const totalCost = parseInt(item.price.slice(2)) * parseInt(qty.quantity);
+
+  let cart = JSON.parse(localStorage.getItem("cartItem")) || [];
 
   function addToCart(e) {
     e.preventDefault();
@@ -35,10 +35,22 @@ const Detail = ({ itemName }) => {
       total: totalCost,
     };
 
-    cart.push(formData);
-    setShowCartModal(true);
+    let isDuplicate = false;
 
-    console.log(cart);
+    // Check if item exists in the cart before adding
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].name === formData.name) {
+        console.log("Duplicate");
+        isDuplicate = true;
+        break;
+      }
+    }
+
+    if (!isDuplicate) {
+      cart.push(formData);
+      localStorage.setItem("cartItem", JSON.stringify(cart));
+      setShowCartModal(true);
+    }
   }
 
   function closeCartModal() {
@@ -47,18 +59,24 @@ const Detail = ({ itemName }) => {
   }
 
   return (
-    <div className="p-6 flex flex-col w-full items-center justify-center h-screen gap-6 uppercase">
-      <figure className="rounded-lg bg-slate-300 p-1">
-        <img src={item?.img} alt="item-image" className="w-[200px] h-[200px]" />
+    <div className="p-6 flex flex-col w-full items-center justify-center h-screen gap-6 uppercase lg:flex-row lg:gap-16">
+      <figure className="rounded-lg bg-slate-300 p-1 lg:ml-20 w-full">
+        <img
+          src={item?.img}
+          alt="item-image"
+          className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-full lg:h-[400px]"
+        />
       </figure>
       <div className="flex flex-col gap-4 w-full">
-        <h3>{item?.name}</h3>
-        <p className="font-extralight">{item?.price}</p>
-        <form action="" className="flex flex-col gap-8 ">
-          <span className="w-full relative">
+        <span className="text-center lg:text-left lg:px-6">
+          <h3 className="text-xl">{item?.name}</h3>
+          <p className="font-extralight">{item?.price}</p>
+        </span>
+        <form action="" className="flex flex-col gap-8 lg:p-6 ">
+          <span className="w-full relative md:w-[40%] md:mx-auto lg:w-full">
             <input
               type="number"
-              className="w-full border-b-2 bg-transparent text-center placeholder:font-bold py-3 outline-none"
+              className="w-full border-b-2 bg-transparent text-center placeholder:font-bold py-3 outline-none "
               placeholder={qty.quantity}
               onChange={handleInputChange}
               value={qty.quantity}
@@ -69,7 +87,7 @@ const Detail = ({ itemName }) => {
           </span>
           <button
             onClick={addToCart}
-            className="border-2 p-4 rounded-md uppercase"
+            className="border-2 p-4 rounded-md uppercase w-full md:w-[40%] md:mx-auto lg:w-full font-extralight hover:bg-slate-50 hover:text-slate-900"
           >
             Add to cart
           </button>

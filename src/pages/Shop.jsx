@@ -22,7 +22,7 @@ const Shop = () => {
       className="min-h-screen bg-slate-900 text-white flex flex-col lg:flex-row lg:overflow-scroll bonita w-full"
       onWheel={isMobile() ? null : scrollHandler}
     >
-      <Header />
+      {/* <Header /> */}
       <List />
     </div>
   );

@@ -35,23 +35,13 @@ const MainPage = () => {
       className="min-h-screen bg-slate-900 text-white flex flex-col lg:flex-row lg:overflow-scroll bonita"
       onWheel={isMobile() ? null : scrollHandler}
     >
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <Shop />
       <Back1 />
       <ItemDisplay />
       <Back2 />
       <Info />
-      <span className="hidden lg:flex gap-3 items-center absolute top-0 right-0 uppercase p-6">
-        <Link className="capitalize text-lg font-extralight">
-          checkout anonymously
-        </Link>
-        <p>|</p>
-        <span className="flex items-center">
-          <BsCart3 />
-          (0)
-        </span>
-      </span>
     </div>
   );
 };

@@ -58,7 +58,7 @@ const List = () => {
         <p className="font-extralight text-sm">{currentItem?.price}</p>
         <Link
           className={
-            " border-2 py-4 mx-auto rounded-md lg:absolute lg:-bottom-20 lg:right-0 w-[250px] uppercase"
+            " border-2 py-4 mx-auto rounded-md lg:absolute lg:-bottom-20 lg:right-0 w-[250px] uppercase text-center hover:bg-slate-100 hover:text-slate-900"
           }
           to={`/item/${currentItem.name}`}
         >

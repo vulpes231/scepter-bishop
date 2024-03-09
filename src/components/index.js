@@ -14,6 +14,8 @@ import Quote from "./mainpage/Quote";
 import List from "./shop/List";
 import Detail from "./itemdetails/Detail";
 import SideBar from "./itemdetails/SideBar";
+import CartIcon from "./CartIcon";
+import SocialIcon from "./SocialIcon";
 
 export {
   Header,
@@ -32,4 +34,6 @@ export {
   List,
   Detail,
   SideBar,
+  CartIcon,
+  SocialIcon,
 };
