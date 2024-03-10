@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { scrollHandler, isMobile } from "../utils";
-import { Header } from "../components";
 
 const Checkout = () => {
   useEffect(() => {

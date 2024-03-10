@@ -15,7 +15,12 @@ const Item = ({ wineImg, wineName, winePrice, customClass }) => {
       </figure>
       <h3 className="text-2xl font-semibold whitespace-nowrap">{wineName}</h3>
       <p>{winePrice}</p>
-      <Link className="p-3 border rounded-md w-[150px] text-center">buy</Link>
+      <Link
+        to={`/item/${wineName}`}
+        className="p-3 border rounded-md w-[150px] text-center hover:bg-slate-100 hover:text-slate-900"
+      >
+        buy
+      </Link>
     </div>
   );
 };
