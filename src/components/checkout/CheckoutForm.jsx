@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CheckoutProd from "./CheckoutProd";
 import CustomInput from "./CustomInput";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { reset, submitOrder } from "../../features/orderSlice";
+import Modal from "./Modal";
 
 const initialState = {
   name: "",
@@ -11,8 +14,12 @@ const initialState = {
 const cartItems = JSON.parse(localStorage.getItem("cartItem"));
 
 const CheckoutForm = () => {
+  const dispatch = useDispatch();
   const [form, setForm] = useState(initialState);
   const [agreedTC, setAgreedTC] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+  const { loading, error, success } = useSelector((state) => state.order);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -22,15 +29,38 @@ const CheckoutForm = () => {
     }));
   };
 
+  const resetInput = () => {
+    setForm(initialState);
+  };
+
   function agreeTerms() {
     setAgreedTC((prev) => !prev);
   }
 
   function placeOrder(e) {
     e.preventDefault();
-    const order = [...cartItems];
-    console.log(order);
+    console.log("Clicked");
+    const orders = [...cartItems];
+    console.log(orders);
+
+    const formData = {
+      orders: orders,
+      name: form.name,
+      address: form.name,
+      phone: form.phone,
+    };
+
+    dispatch(submitOrder(formData));
   }
+
+  useEffect(() => {
+    if (success) {
+      setShowSuccessModal(true);
+      localStorage.removeItem("cartItem");
+      dispatch(reset());
+      resetInput();
+    }
+  }, [success]);
 
   return (
     <div className="w-full uppercase">
@@ -39,7 +69,7 @@ const CheckoutForm = () => {
           <article className="flex flex-col gap-2 lg:flex-row lg:gap-10">
             <div className="w-full p-2 ">
               <h3 className="py-2">personal details</h3>
-              <label htmlFor="">
+              <label htmlFor="name">
                 <CustomInput
                   type={"text"}
                   placeholder={"name"}
@@ -48,7 +78,7 @@ const CheckoutForm = () => {
                   name={"name"}
                 />
               </label>
-              <label htmlFor="">
+              <label htmlFor="address">
                 <CustomInput
                   type={"text"}
                   placeholder={"address"}
@@ -57,7 +87,7 @@ const CheckoutForm = () => {
                   name={"address"}
                 />
               </label>
-              <label htmlFor="">
+              <label htmlFor="phone">
                 <CustomInput
                   type={"number"}
                   placeholder={"phone"}
@@ -83,18 +113,18 @@ const CheckoutForm = () => {
               </small>
             </div>
             <button
+              type="button"
               className={
-                agreedTC
-                  ? "w-full lg:w-[350px] lg:mx-auto border-2 py-4 font-extralight rounded-lg uppercase hover:bg-slate-100 hover:text-slate-900 cursor-pointer "
-                  : "w-full lg:w-[350px] lg:mx-auto border py-4 rounded-lg uppercase text-slate-400"
+                "w-full lg:w-[350px] lg:mx-auto border-2 py-4 font-extralight rounded-lg uppercase hover:bg-slate-100 hover:text-slate-900 cursor-pointer "
               }
-              disabled={agreedTC}
+              // disabled={agreedTC}
               onClick={placeOrder}
             >
               place order
             </button>
           </div>
         </form>
+        {showSuccessModal && <Modal />}
       </div>
     </div>
   );

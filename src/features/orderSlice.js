@@ -4,19 +4,20 @@ import axios from "axios";
 const initialState = {
   loading: false,
   error: false,
-  sucess: false,
+  success: false,
 };
 
 export const submitOrder = createAsyncThunk(
   "order/submitOrder",
   async (formData) => {
-    const url = "";
+    const url = "http://localhost:2500/order";
     try {
       const response = axios.post(url, formData, {
         headers: {
           "Content-Type": "application/json",
         },
       });
+      return response.data;
     } catch (error) {
       if (error.response) {
         const errorMsg = error.response.data.message;
@@ -35,7 +36,7 @@ const orderSlice = createSlice({
     reset(state) {
       state.loading = false;
       state.error = false;
-      state.sucess = false;
+      state.success = false;
     },
   },
   extraReducers: (builder) => {
@@ -47,12 +48,12 @@ const orderSlice = createSlice({
       .addCase(submitOrder.fulfilled, (state, action) => {
         state.loading = false;
         state.error = false;
-        state.sucess = true;
+        state.success = true;
       })
       .addCase(submitOrder.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-        state.sucess = false;
+        state.success = false;
       });
   },
 });
