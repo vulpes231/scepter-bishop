@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { scrollHandler, isMobile } from "../utils";
+import CheckoutForm from "../components/checkout/CheckoutForm";
 
 const Checkout = () => {
   useEffect(() => {
@@ -22,8 +23,8 @@ const Checkout = () => {
       onWheel={isMobile() ? null : scrollHandler}
     >
       {/* <Header /> */}
-      <div>
-        <h3 className="mt-32">This page is under construction...</h3>
+      <div className="flex flex-col items-center w-full mt-24 p-6 lg:max-w-[900px] lg:mx-auto">
+        <CheckoutForm />
       </div>
     </div>
   );

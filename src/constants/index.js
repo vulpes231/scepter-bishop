@@ -95,14 +95,14 @@ export const shopItems = [
   },
   {
     id: 2,
-    name: "aderall",
+    name: "lsd",
     desc: "",
     img: rose,
     price: `${nairaSymbol} 25000`,
   },
   {
     id: 3,
-    name: "lsd",
+    name: "aderall",
     desc: "",
     img: chardonnay,
     price: `${nairaSymbol} 15000`,

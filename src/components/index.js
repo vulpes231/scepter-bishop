@@ -16,6 +16,8 @@ import Detail from "./itemdetails/Detail";
 import SideBar from "./itemdetails/SideBar";
 import CartIcon from "./CartIcon";
 import SocialIcon from "./SocialIcon";
+import CheckoutProd from "./checkout/CheckoutProd";
+import CheckoutForm from "./checkout/CheckoutForm";
 
 export {
   Header,
@@ -36,4 +38,6 @@ export {
   SideBar,
   CartIcon,
   SocialIcon,
+  CheckoutProd,
+  CheckoutForm,
 };
