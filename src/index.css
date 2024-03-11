@@ -19,7 +19,7 @@
   background-image: url("./assets/bg-small.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  height: 100vh;
 }
 
 .hero-img {
@@ -28,13 +28,6 @@
   background-repeat: no-repeat;
   height: 100vh; /* Set a default height */
   background-position: center;
-}
-
-.background-container {
-  background-image: url("./assets/pic2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
 }
 
 .hero-video {
@@ -55,13 +48,8 @@
 
 /* Media query for larger screens */
 @media (min-width: 768px) {
-  .background-container {
-    background-image: url("./assets/bg-big.jpg");
-    background-size: cover;
-    height: 100%; /* Set the height to fill the screen */
-  }
   .lady {
-    background-image: url("./assets/bg-big.jpg");
+    background-image: url("./assets/bg-small.jpg");
     background-size: cover;
     height: 100vh; /* Set the height to fill the screen */
   }

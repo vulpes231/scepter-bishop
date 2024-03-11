@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 import { HiCube, HiMenu } from "react-icons/hi";
-import { BsCart2, BsInstagram, BsTelegram, BsWhatsapp } from "react-icons/bs";
+import { BsInstagram, BsTelegram, BsWhatsapp } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
 import MobileMenu from "./mainpage/MobileMenu";
 import { Link } from "react-router-dom";
 import SideBar from "./itemdetails/SideBar";
 import CartIcon from "./CartIcon";
 import SocialIcon from "./SocialIcon";
+// import { logo } from "../assets";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);

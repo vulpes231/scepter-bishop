@@ -3,5 +3,6 @@ import rose from "./img2.jpg";
 import chardonnay from "./img3.jpeg";
 
 import herovid from "./vidbg.mp4";
+import logo from "./logo.jpeg";
 
-export { redwine, rose, chardonnay, herovid };
+export { redwine, rose, chardonnay, herovid, logo };

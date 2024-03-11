@@ -15,7 +15,13 @@ const Modal = () => {
           Your order has been placed kindly follow the link below to complete
           your order.
         </p>
-        <Link className="underline text-xs">complete order</Link>
+        <Link
+          to={"https://wa.me/message/5Y3RIBA4BVDYN1"}
+          className="underline text-xs"
+          target="_blank"
+        >
+          complete order
+        </Link>
         <button onClick={goToShop}>go back</button>
       </div>
     </div>
