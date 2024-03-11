@@ -8,9 +8,14 @@ import { Link } from "react-router-dom";
 import SideBar from "./itemdetails/SideBar";
 import CartIcon from "./CartIcon";
 import SocialIcon from "./SocialIcon";
-// import { logo } from "../assets";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Header = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Trigger animation each time element comes into view
+    threshold: 0.5, // Adjust threshold as needed
+  });
   const [toggle, setToggle] = useState(false);
   const [showCartModal, setshowCartModal] = useState(false);
 
@@ -40,13 +45,19 @@ const Header = () => {
         <Link to={"/"}>
           <HiCube className="text-3xl" />
         </Link>
-        <span onClick={handleToggle} className="cursor-pointer">
+        <motion.span
+          initial={{ opacity: 1, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 4 }}
+          onClick={handleToggle}
+          className="cursor-pointer"
+        >
           {!toggle ? (
             <HiMenu className="text-2xl font-light" />
           ) : (
             <MdCancel className="text-2xl font-light" />
           )}
-        </span>
+        </motion.span>
         <CartIcon
           cartItems={cartItems}
           customClass={"lg:hidden"}

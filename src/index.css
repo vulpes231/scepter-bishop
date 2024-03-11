@@ -16,14 +16,14 @@
 }
 
 .lady {
-  background-image: url("./assets/bg-small.jpg");
+  background-image: url("./assets/bg-small.webp");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
 }
 
 .hero-img {
-  background-image: url("./assets/bg-big.jpg");
+  background-image: url("./assets/bg-big.webp");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh; /* Set a default height */
@@ -49,13 +49,13 @@
 /* Media query for larger screens */
 @media (min-width: 768px) {
   .lady {
-    background-image: url("./assets/bg-small.jpg");
+    background-image: url("./assets/bg-small.webp");
     background-size: cover;
     height: 100vh; /* Set the height to fill the screen */
   }
 
   .hero-img {
-    background-image: url("./assets/bg-big.jpg");
+    background-image: url("./assets/bg-big.webp");
     background-size: cover;
     height: 100vh;
   }
