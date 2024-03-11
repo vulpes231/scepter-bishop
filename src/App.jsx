@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import { Checkout, ItemDetails, MainPage, Shop } from "./pages";
+import { Checkout, Contact, ItemDetails, MainPage, Shop } from "./pages";
 import { CartIcon, Header, SideBar } from "./components";
 
 const App = () => {
@@ -21,6 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/item/:itemName" element={<ItemDetails />} />
       </Routes>

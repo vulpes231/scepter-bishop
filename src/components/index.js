@@ -18,6 +18,8 @@ import CartIcon from "./CartIcon";
 import SocialIcon from "./SocialIcon";
 import CheckoutProd from "./checkout/CheckoutProd";
 import CheckoutForm from "./checkout/CheckoutForm";
+import ContactForm from "./contact/ContactForm";
+import CustomInput from "./checkout/CustomInput";
 
 export {
   Header,
@@ -40,4 +42,6 @@ export {
   SocialIcon,
   CheckoutProd,
   CheckoutForm,
+  ContactForm,
+  CustomInput,
 };

@@ -70,7 +70,10 @@ const Header = () => {
               "https://www.instagram.com/psychedelicsng?igsh=MXF3bGdrb2RjYnE1Mw=="
             }
           />
-          <SocialIcon icon={<BsWhatsapp />} path={""} />
+          <SocialIcon
+            icon={<BsWhatsapp />}
+            path={"https://wa.me/message/5Y3RIBA4BVDYN1"}
+          />
           <SocialIcon
             icon={<BsTelegram />}
             path={"https://t.me/psychedelicthrills"}

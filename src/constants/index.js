@@ -18,7 +18,7 @@ export const mobileMenuLinks = [
     id: 3,
     title: "contact us",
     number: "03",
-    path: "",
+    path: "/contact",
   },
 ];
 
