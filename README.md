@@ -7,12 +7,12 @@ To get started with Bishop's Scepter, follow these simple steps:
 
 Clone this repository to your local machine:
 
-`git clone https://github.com/vulpes231/bishop-scepter`
+`git clone https://github.com/vulpes231/scepter-bishop`
 Ensure you have Node.js version 16 or later installed. If not, you can install it on macOS using Homebrew:
 
 `brew install node`
 
-`cd bishop-scepter`
+`cd scepter-bishop`
 `npm install`
 
 Start the application in development mode:
