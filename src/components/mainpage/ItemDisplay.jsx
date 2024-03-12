@@ -16,12 +16,12 @@ const ItemDisplay = () => {
         <Item
           wineImg={rose}
           wineName={"lsd"}
-          winePrice={`${nairaSymbol} 25,000 per gram`}
+          winePrice={`${nairaSymbol} 20,000 per gram`}
         />
         <Item
           wineImg={chardonnay}
           wineName={"aderall"}
-          winePrice={`${nairaSymbol} 15,000 per tab`}
+          winePrice={`${nairaSymbol} 25,000 per tab`}
           customClass={"transform rotate-180"}
         />
       </div>
