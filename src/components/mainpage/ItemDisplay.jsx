@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "./Item";
-import { chardonnay, redwine, rose } from "../../assets";
+import { chardonnay, redwine, rose, xanax } from "../../assets";
 import { nairaSymbol } from "../../utils";
 
 const ItemDisplay = () => {
@@ -22,6 +22,12 @@ const ItemDisplay = () => {
           wineImg={chardonnay}
           wineName={"aderall"}
           winePrice={`${nairaSymbol} 25,000 per tab`}
+          customClass={"transform rotate-180"}
+        />
+        <Item
+          wineImg={xanax}
+          wineName={"xanax"}
+          winePrice={`${nairaSymbol} 15,000 per tab`}
           customClass={"transform rotate-180"}
         />
       </div>

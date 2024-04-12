@@ -1,4 +1,4 @@
-import { redwine, rose, chardonnay } from "../assets";
+import { redwine, rose, chardonnay, xanax } from "../assets";
 import { nairaSymbol } from "../utils";
 
 export const mobileMenuLinks = [
@@ -98,13 +98,20 @@ export const shopItems = [
     name: "lsd",
     desc: "",
     img: rose,
-    price: `${nairaSymbol} 25000`,
+    price: `${nairaSymbol} 20000`,
   },
   {
     id: 3,
     name: "aderall",
     desc: "",
     img: chardonnay,
+    price: `${nairaSymbol} 25000`,
+  },
+  {
+    id: 4,
+    name: "xanax",
+    desc: "",
+    img: xanax,
     price: `${nairaSymbol} 15000`,
   },
 ];

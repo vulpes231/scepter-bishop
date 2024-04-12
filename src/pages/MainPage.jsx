@@ -37,11 +37,11 @@ const MainPage = () => {
     >
       {/* <Header /> */}
       <Hero />
+      <Info />
       <Shop />
       <Back1 />
       <ItemDisplay />
       <Back2 />
-      <Info />
     </div>
   );
 };
